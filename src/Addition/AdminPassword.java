@@ -1,7 +1,7 @@
 package Addition;
 
 public class AdminPassword {
-        private String adminUser ="adminkim"; 
+        private String adminUser ="admin"; 
         private int adminPassword = 631305000;
         
 

@@ -19,7 +19,7 @@ public class MenuBooking {
     }
 
     public void StartApp() {
-        test = new BookedResort(10);
+        test = new BookedResort(15);
         temp = test.getresortlength() / 2;
         for (int room = 1; room <= test.getresortlength(); room++) {
             test.setRoom(room, "Room " + room, 0, 0, "None");
@@ -36,30 +36,29 @@ public class MenuBooking {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("\n");
-         System.out.print("Admin User :");
-                        String inputAdminUser =sc.nextLine();
-                        if(inputAdminUser.equals(apss.getAdminUser())){
-                            System.out.print("Admin Password :");
-                        }else {
-                            System.out.println("Admin User incorrect!!");
-                             ResortApp();
-                        }
-                        try{
-                          int inputAdminpassword =sc.nextInt();
-                            if  (inputAdminpassword == apss.getAdminPassword()){
-                                System.out.println("\n");
-                                 System.out.println("Correct>>");
-                        
-                        }
+        System.out.print("Admin User :");
+        String inputAdminUser = sc.nextLine();
+        if (inputAdminUser.equals(apss.getAdminUser())) {
+            System.out.print("Admin Password :");
+        } else {
+            System.out.println("Admin User incorrect!!");
+            ResortApp();
+        }
+        try {
+            int inputAdminpassword = sc.nextInt();
+            if (inputAdminpassword == apss.getAdminPassword()) {
+                System.out.println("\n");
+                System.out.println("Correct>>");
 
-                        }catch(Exception ex) {
-                          System.out.println(" Password Incorrect!!" );
-                         sc.reset();
-                          sc.next();
-                         ResortApp();
-                        }
-                          
-                           
+            }
+
+        } catch (Exception ex) {
+            System.out.println(" Password Incorrect!!");
+            sc.reset();
+            sc.next();
+            ResortApp();
+        }
+
         try {
 
             while (true) {
@@ -88,8 +87,7 @@ public class MenuBooking {
                     //------------------------------------------------------------------//        
 
                     case 2:
-                       
-                        
+
                         System.out.print("Plese Enter Password :");
                         int inputCheckin = sc.nextInt();
                         if (inputCheckin == apss.getAdminPassword()) {
@@ -127,7 +125,7 @@ public class MenuBooking {
                     //-----------------------------------------------------------//
 
                     case 3:
-                        
+
                         System.out.print("Plese Enter Password :");
                         int inputCheckout = sc.nextInt();
                         if (inputCheckout == apss.getAdminPassword()) {
@@ -163,5 +161,4 @@ public class MenuBooking {
         }
 
     }
-    }
-
+}

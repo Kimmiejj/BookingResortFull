@@ -7,31 +7,32 @@ public class ResortData {
     private boolean RoomStatus;
     private RoomType RoomType;
     private int CustumerNum;
-   private String TimeDate;
-    
+    private String TimeDate;
 
-    public ResortData(String name, int id, boolean RoomStatus ,int customer,String time) {
-        this.ownerName = name ;
+    public ResortData(String name, int id, boolean RoomStatus, int customer, String time) {
+        this.ownerName = name;
         this.ownerId = id;
         this.RoomStatus = RoomStatus;
-        this.CustumerNum=customer;
-        this.TimeDate=time;
-  
+        this.CustumerNum = customer;
+        this.TimeDate = time;
+
         this.RoomType = RoomType.None;
     }
-    
-    public String getDate(){
-    return this.TimeDate;
+
+    public String getDate() {
+        return this.TimeDate;
     }
-    public void setDate(String time){
-        this.TimeDate=time;
+
+    public void setDate(String time) {
+        this.TimeDate = time;
     }
-    
-   public  int getNCustomer(){
-   return this.CustumerNum;
-   }
-   public void  setNCustomer(int customer){
-       this.CustumerNum=customer;
+
+    public int getNCustomer() {
+        return this.CustumerNum;
+    }
+
+    public void setNCustomer(int customer) {
+        this.CustumerNum = customer;
     }
 
     public void setownername(String name) {
@@ -72,19 +73,21 @@ public class ResortData {
             Room = "Deluxe";
         } else if (this.RoomType == RoomType.Suite) {
             Room = "Suite";
-        } 
+        }
         return Room;
     }
 
     @Override
     public String toString() {
-        return "[---Data Resort---]" +" | "
-                + " [-"+"Custumer Name-] |=[ "+ownerName+" ]"  
-                + " Custumer ID= | ["+ ownerId +"] "
-                + "  RoomStatus= | [ " + RoomStatus + " ]  "
-                + "RoomType= | [" + getroomtype() + "]"
-                + " number of customer= | [ "+CustumerNum+" ] "
-                + "DateTime= | [ "+TimeDate+" ]";
+        return "\n-------------------------------------------------------------------------------------------------------------------------------------------\n"
+                + "|Room| = (Name) : [" + ownerName + "]"
+                + "\t\t|Status|  :  [" + RoomStatus + "]"
+                + "\t\t|Type|  :  [" + getroomtype() + "]"
+                + "\n-------------------------------------------------------------------------------------------------------------------------------------------\n"
+                + "|Custumer ID|  :  [" + ownerId + "]"
+                + "\t\t|Number of Customer| = [" + CustumerNum + "]"
+                + "\t\t|DateTime| = [" + TimeDate + "]"
+                + "\n-------------------------------------------------------------------------------------------------------------------------------------------\n";
     }
 
 }

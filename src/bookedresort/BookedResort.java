@@ -6,27 +6,28 @@ public class BookedResort {
 
     private ResortData[] Resort;
     private int ResortLength;
-   
-        public BookedResort(int amountResort ) {
+
+    public BookedResort(int amountResort) {
         Resort = new ResortData[amountResort];
         this.ResortLength = amountResort;
     }
-    
 
-    public boolean getRoomStatus(int number){
-        return Resort[number-1].getroomstatus();
-    }
-   
-    public void setRoom(int amountRoom, String name, int id ,int customer,String time ) {
-        Resort[amountRoom - 1] = new ResortData(name, id, true ,0 ,time );
+    public boolean getRoomStatus(int number) {
+        return Resort[number - 1].getroomstatus();
     }
 
-    public void checkin(int checkin, String name, int id , int customer ,String time  ) {
-        Resort[checkin - 1] = new ResortData(name, id, false , customer , time );
+    public void setRoom(int amountRoom, String name, int id, int customer, String time) {
+        Resort[amountRoom - 1] = new ResortData(name, id, true, 0, time);
+    }
+
+    public void checkin(int checkin, String name, int id, int customer, String time) {
+        Resort[checkin - 1] = new ResortData(name, id, false, customer, time);
     }
 
     public String getRoomDetail(int index) {
-        return Resort[index - 1].toString();
+        String RoomDetails = "";
+        RoomDetails += String.format("[--- Data Resort %d ---]" + " | " + Resort[index - 1].toString(), index);
+        return RoomDetails;
     }
 
     public int getresortlength() {
@@ -38,7 +39,7 @@ public class BookedResort {
     }
 
     public void setSuite(int amountSuite) {
-        Resort[amountSuite- 1].setsuite();
+        Resort[amountSuite - 1].setsuite();
     }
 
     public void checkout(int checkout) {
@@ -46,8 +47,7 @@ public class BookedResort {
         Resort[checkout - 1].setownerid(0);
         Resort[checkout - 1].setroomstatus(true);
         Resort[checkout - 1].setNCustomer(0);
-        Resort[checkout -1].setDate("None");
+        Resort[checkout - 1].setDate("None");
     }
 
-   
 }
