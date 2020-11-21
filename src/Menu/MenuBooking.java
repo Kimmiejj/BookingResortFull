@@ -154,7 +154,7 @@ public class MenuBooking {
                 }
             }
         } catch (Exception ex) {
-            System.out.println("Input incorrect! Please fill in again : ");
+            System.out.println("Input incorrect! Please do it again : ");
             sc.reset();
             sc.next();
             ResortApp();
