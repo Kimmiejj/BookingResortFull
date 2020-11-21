@@ -115,7 +115,7 @@ public class MenuBooking {
                                     test.setDeluxe(room_number);
                                 }
                                 System.out.println("\n");
-                                System.out.println("[COMPETE]");
+                                System.out.println("[COMPLETE]");
                             } else {
                                 System.out.println("\n\n");
                                 System.out.println("[RENTED!!]");
