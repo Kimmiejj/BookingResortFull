@@ -49,7 +49,5 @@ public class BookedResort {
         Resort[checkout -1].setDate("None");
     }
 
-    public void checkin(int room_number, String owner_Name, int owner_id, int numberCustomer, LocalDateTime date) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 }

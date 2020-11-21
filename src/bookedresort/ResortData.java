@@ -78,7 +78,13 @@ public class ResortData {
 
     @Override
     public String toString() {
-        return "ResortData[" + "ownerName=[ "+ownerName+" ]"  + " ownerId= ["+ ownerId +"]   RoomStatus=[ " + RoomStatus + " ]  RoomType=[" + getroomtype() + "] number of customer=[ "+CustumerNum+" ] DateTime=[ "+TimeDate+" ]";
+        return "[---Data Resort---]" +" | "
+                + " [-"+"Custumer Name-] |=[ "+ownerName+" ]"  
+                + " Custumer ID= | ["+ ownerId +"] "
+                + "  RoomStatus= | [ " + RoomStatus + " ]  "
+                + "RoomType= | [" + getroomtype() + "]"
+                + " number of customer= | [ "+CustumerNum+" ] "
+                + "DateTime= | [ "+TimeDate+" ]";
     }
 
 }

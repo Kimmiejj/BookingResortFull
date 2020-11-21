@@ -9,11 +9,12 @@ public class MenuBooking {
 
     BookedResort test = new BookedResort(0);
     AdminPassword apss = new AdminPassword();
-     LocalDateTime date = LocalDateTime.now();
-    
+    LocalDateTime date = LocalDateTime.now();
+
     int temp;
 
     public MenuBooking() {
+
         StartApp();
     }
 
@@ -21,7 +22,7 @@ public class MenuBooking {
         test = new BookedResort(10);
         temp = test.getresortlength() / 2;
         for (int room = 1; room <= test.getresortlength(); room++) {
-            test.setRoom(room, "Room " + room, 0,0,"None");
+            test.setRoom(room, "Room " + room, 0, 0, "None");
             if (room <= temp) {
                 test.setSuite(room);
             } else {
@@ -34,19 +35,43 @@ public class MenuBooking {
     public void ResortApp() {
 
         Scanner sc = new Scanner(System.in);
+        System.out.println("\n");
+         System.out.print("Admin User :");
+                        String inputAdminUser =sc.nextLine();
+                        if(inputAdminUser.equals(apss.getAdminUser())){
+                            System.out.print("Admin Password :");
+                        }else {
+                            System.out.println("Admin User incorrect!!");
+                             ResortApp();
+                        }
+                        try{
+                          int inputAdminpassword =sc.nextInt();
+                            if  (inputAdminpassword == apss.getAdminPassword()){
+                                System.out.println("\n");
+                                 System.out.println("Correct>>");
+                        
+                        }
 
+                        }catch(Exception ex) {
+                          System.out.println(" Password Incorrect!!" );
+                         sc.reset();
+                          sc.next();
+                         ResortApp();
+                        }
+                          
+                           
         try {
 
             while (true) {
                 System.out.println("\n");
                 System.out.print("[Choose Number Menu] \n");
-               System.out.print("1.) Check Status Room \n");
+                System.out.print("1.) Check Status Room \n");
                 System.out.print("2.) Check in \n");
                 System.out.print("3.) Check out \n");
                 System.out.print("4.) Close Program \n");
-                 System.out.println("-------------------------\n\n");
-                System.out.print("Choose nunber Menu :\n");
-               
+                System.out.println("-------------------------\n\n");
+                System.out.print("Choose nunber Menu :");
+
                 int chooseMenu = sc.nextInt();
 
                 switch (chooseMenu) {
@@ -63,7 +88,8 @@ public class MenuBooking {
                     //------------------------------------------------------------------//        
 
                     case 2:
-
+                       
+                        
                         System.out.print("Plese Enter Password :");
                         int inputCheckin = sc.nextInt();
                         if (inputCheckin == apss.getAdminPassword()) {
@@ -78,12 +104,11 @@ public class MenuBooking {
                                 System.out.print("Owner Name :  ");
                                 String owner_Name = sc.nextLine();
                                 System.out.print("Number of Customer :");
-                               int numberCustomer =sc.nextInt();
-                            
-                                if (numberCustomer<=2) {
-                                      test.checkin(room_number, owner_Name, owner_id, numberCustomer,"DateandTime"+date);
-                                }
-                                else {
+                                int numberCustomer = sc.nextInt();
+
+                                if (numberCustomer <= 2) {
+                                    test.checkin(room_number, owner_Name, owner_id, numberCustomer, "DateandTime" + date);
+                                } else {
                                     System.out.println(" [EXCESS!!] ");
                                 }
                                 if (room_number <= temp) {
@@ -102,6 +127,7 @@ public class MenuBooking {
                     //-----------------------------------------------------------//
 
                     case 3:
+                        
                         System.out.print("Plese Enter Password :");
                         int inputCheckout = sc.nextInt();
                         if (inputCheckout == apss.getAdminPassword()) {
@@ -109,25 +135,33 @@ public class MenuBooking {
                             int checkout_number = sc.nextInt();
                             sc.nextLine();
                             test.checkout(checkout_number);
+                            System.out.println("\n");
+                            System.out.println("[COMPETE]");
                         } else {
-                            System.out.println("Password is wrong!!");
+                            System.out.println("\n");
+                            System.out.println("[NO  BOOKING]");
+                            System.out.println("\n");
+                            System.out.println("We can't proceed!!");
                         }
-                        System.out.println("[NO  BOOKING]");
 
                         break;
                     //-----------------------------//
- 
+
                     case 4:
                         System.exit(0);
+                        break;
+                    //---------------------------------------------------------------------//
+
+                    //----------------------------------------------------------------------//
                 }
             }
         } catch (Exception ex) {
-             System.out.println("Input incorrect! Please fill in again : ");
+            System.out.println("Input incorrect! Please fill in again : ");
             sc.reset();
             sc.next();
             ResortApp();
         }
 
     }
+    }
 
-}
