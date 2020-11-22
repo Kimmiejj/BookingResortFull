@@ -49,7 +49,11 @@ public class MenuBooking {
             if (inputAdminpassword == apss.getAdminPassword()) {
                 System.out.println("\n");
                 System.out.println("Correct>>");
-
+              
+            }
+            else{
+                System.out.println("Incorrect password!!!");
+                ResortApp();
             }
 
         } catch (Exception ex) {
@@ -131,10 +135,19 @@ public class MenuBooking {
                         if (inputCheckout == apss.getAdminPassword()) {
                             System.out.print("Room Number : ");
                             int checkout_number = sc.nextInt();
-                            sc.nextLine();
+                             if(test.getRoomStatus(checkout_number)==false){
+                               sc.nextLine();
                             test.checkout(checkout_number);
                             System.out.println("\n");
-                            System.out.println("[COMPETE]");
+                            System.out.println("[COMPLETE]");
+                             
+                             }
+                             else{
+                                 System.out.println("\n");
+                                 System.out.println("[NO COMPLETE!!]");
+                                 
+                             }
+                          
                         } else {
                             System.out.println("\n");
                             System.out.println("[NO  BOOKING]");
