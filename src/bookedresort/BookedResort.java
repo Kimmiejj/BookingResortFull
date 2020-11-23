@@ -13,7 +13,7 @@ public class BookedResort {
     }
 
     public boolean getRoomStatus(int number) {
-        return Resort[number - 1].getroomstatus();
+        return Resort[number -1].getroomstatus();
     }
 
     public void setRoom(int amountRoom, String name, int id, int customer, String time) {

@@ -100,10 +100,10 @@ public class MenuBooking {
                             int room_number = sc.nextInt();
                             sc.nextLine();
                             if (test.getRoomStatus(room_number) == true) {
-                                System.out.print("Owner Id : ");
+                                System.out.print("Custumer ID : ");
                                 int owner_id = sc.nextInt();
                                 sc.nextLine();
-                                System.out.print("Owner Name :  ");
+                                System.out.print("Custumer Name :  ");
                                 String owner_Name = sc.nextLine();
                                 System.out.print("Number of Customer :");
                                 int numberCustomer = sc.nextInt();
