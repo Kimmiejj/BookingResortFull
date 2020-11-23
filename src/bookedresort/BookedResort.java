@@ -26,7 +26,7 @@ public class BookedResort {
 
     public String getRoomDetail(int index) {
         String RoomDetails = "";
-        RoomDetails += String.format("[--- Data Resort %d ---]" + " | " + Resort[index - 1].toString(), index);
+        RoomDetails += String.format("[--- Data Resort %d ---]" + " | " + Resort[index -1].toString(), index);
         return RoomDetails;
     }
 

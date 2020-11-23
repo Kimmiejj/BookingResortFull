@@ -91,7 +91,7 @@ public class MenuBooking {
                     //------------------------------------------------------------------//        
 
                     case 2:
-
+                             
                         System.out.print("Plese Enter Password :");
                         int inputCheckin = sc.nextInt();
                         if (inputCheckin == apss.getAdminPassword()) {
@@ -123,6 +123,7 @@ public class MenuBooking {
                             } else {
                                 System.out.println("\n\n");
                                 System.out.println("[RENTED!!]");
+                                 
                             }
                         }
                         break;
